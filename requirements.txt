@@ -1,0 +1,10 @@
+box-sdk-gen==1.5.1
+pandas==2.2.2
+python-dotenv==1.0.1
+docxtpl==0.18.0
+tqdm==4.66.5
+llama-index==0.11.14
+llama-index-readers-box==0.2.3
+llama-index-vector-stores-chroma==0.2.0
+llama-index-embeddings-huggingface==0.3.1
+docx2txt==0.8
