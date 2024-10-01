@@ -1,7 +1,6 @@
 import chromadb
 import openai
 from box_sdk_gen import BoxClient, SearchForContentContentTypes
-from chromadb.errors import InvalidCollectionException
 from llama_index.core import StorageContext, VectorStoreIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.readers.box import BoxReader
@@ -13,6 +12,7 @@ from utils.box_client_ccg import AppConfig, get_ccg_user_client
 def main():
     conf = AppConfig()
     client: BoxClient = get_ccg_user_client(conf, conf.ccg_user_id)
+    openai.api_key = conf.open_ai_key
 
     # who am i
     me = client.users.get_user_me()
@@ -38,15 +38,12 @@ def main():
     documents = box_reader.load_data(file_ids=leases_ids)
 
     # Setup model
-    openai.api_key = conf.open_ai_key
+    # openai.api_key = conf.open_ai_key
     embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-base-en-v1.5")
 
     # Initialize ChromaDB (Vector store)
     chroma_client = chromadb.PersistentClient(path="./.chroma.db")
-    try:
-        chroma_collection = chroma_client.get_collection("workshop_leases")
-    except InvalidCollectionException:
-        chroma_collection = chroma_client.create_collection("workshop_leases")
+    chroma_collection = chroma_client.get_or_create_collection("workshop_leases")
 
     # Set up ChromaVectorStore and load in data
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)

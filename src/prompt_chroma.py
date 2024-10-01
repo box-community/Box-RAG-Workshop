@@ -20,14 +20,14 @@ def print_response(query, response):
 
 
 def main():
-    # App config and Box Client
     conf = AppConfig()
+    openai.api_key = conf.open_ai_key
 
     # cleat screen
     print("\033[H\033[J")
 
     # Setup model
-    openai.api_key = conf.open_ai_key
+    # openai.api_key = conf.open_ai_key
     embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-base-en-v1.5")
 
     # Initialize ChromaDB (Vector store)
@@ -51,7 +51,7 @@ def main():
     example_prompts = [
         "Describe HAB-1 type properties",
         "Describe HAB-2 type properties",
-        "When does Isaac Newton contract expires?",
+        "When does Isaac Newton lease end?",
         "What type of property does Robert Oppenheimer has?",
     ]
 
