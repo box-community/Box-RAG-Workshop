@@ -49,9 +49,10 @@ def main():
 
     # Example prompts
     example_prompts = [
-        "What type of units are these?",
-        "Which 5 contracts renew first?",
-        "What is the monthly expected revenue for these units?",
+        "Describe HAB-1 type properties",
+        "Describe HAB-2 type properties",
+        "When does Isaac Newton contract expires?",
+        "What type of property does Robert Oppenheimer has?",
     ]
 
     # Infinite cycle to ask the user for prompts
