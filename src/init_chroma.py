@@ -1,10 +1,13 @@
+from typing import List
+
 import chromadb
 import openai
 from box_sdk_gen import BoxClient, SearchForContentContentTypes
-from llama_index.core import StorageContext, VectorStoreIndex
+from llama_index.core import Document, StorageContext, VectorStoreIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.readers.box import BoxReader
 from llama_index.vector_stores.chroma import ChromaVectorStore
+from tqdm import tqdm
 
 from utils.box_client_ccg import AppConfig, get_ccg_user_client
 
@@ -24,7 +27,7 @@ def main():
     # Using BoxReader
     box_reader = BoxReader(client)
 
-    leases_ids = box_reader.search_resources(
+    leases = box_reader.search_resources(
         query="HAB-",
         ancestor_folder_ids=[conf.box_root_demo_folder],
         content_types=[SearchForContentContentTypes.NAME],
@@ -32,13 +35,17 @@ def main():
         limit=100,
     )
 
-    print(f"Leases found: {len(leases_ids)}, reading documents...\n")
+    print(f"Leases found: {len(leases)}, reading documents from Box...")
     # print(f"Leases ids: {leases_ids}")
 
-    documents = box_reader.load_data(file_ids=leases_ids)
+    documents: List[Document] = []
+
+    for lease in tqdm(leases):
+        document = box_reader.load_data(file_ids=[lease])
+        if document:
+            documents.extend(document)
 
     # Setup model
-    # openai.api_key = conf.open_ai_key
     embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-base-en-v1.5")
 
     # Initialize ChromaDB (Vector store)
@@ -50,7 +57,7 @@ def main():
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
     # Create a Chroma Index
-    print("Indexing documents...\n")
+    print("\nIndexing documents...")
     index = VectorStoreIndex.from_documents(
         documents,
         storage_context=storage_context,
