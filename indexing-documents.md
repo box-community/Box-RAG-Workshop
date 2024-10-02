@@ -94,6 +94,12 @@ print("-" * 80)
 print()
 ```
 
+Resulting in:
+```yaml
+Query: Describe the indexed documents
+Query result: The indexed documents include a lease agreement for habitat units on the moon. The agreement outlines details such as payment terms, permitted use of the property, compliance with outer space treaties and laws, responsibilities for maintenance, insurance requirements, termination conditions, governing laws, dispute resolution procedures, and miscellaneous clauses regarding lease transfer and force majeure events.
+```
+
 Go ahead and execute the script `src/init_chroma.py` to see the data extraction process.
 
 Take a look at the [workshop](src/init_chroma.py) script to see how to extract data from multiple documents.

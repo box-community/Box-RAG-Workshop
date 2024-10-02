@@ -26,6 +26,6 @@ The properties vary from a single communal bed room to a three bedroom apartment
 
 ## Conclusion
 
-In conclusion, this workshop demonstrated how to index and query documents stored in Box using LlamaIndex and ChromaDB. Participants gained hands-on experience in setting up a complete pipeline—from retrieving documents via the Box API to generating embeddings using a pre-trained model and storing these embeddings in a vector database for fast, flexible querying. 
+This workshop demonstrated how to index and query documents stored in Box using LlamaIndex and ChromaDB. Participants gained hands-on experience in setting up a complete pipeline—from retrieving documents via the Box API to generating embeddings using a pre-trained model and storing these embeddings in a vector database for fast, flexible querying. 
 
 The integration of these tools illustrates the power of combining cloud storage, AI-driven document processing, and vector databases to streamline content organization and extraction.

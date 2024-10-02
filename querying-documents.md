@@ -69,6 +69,21 @@ while True:
     response = query_engine.query(query)
     print_response(query, response)
 ```
+Resulting in:
+```yaml
+Example prompts:
+1. Describe HAB-1 type properties
+2. Describe HAB-2 type properties
+3. When does Isaac Newton lease end?
+4. What type of property does Robert Oppenheimer has?
+
+Enter a prompt (or choose 1-4 from examples, 'q' to quit): 4
+
+Query: What type of property does Robert Oppenheimer has?
+Query result:
+Robert Oppenheimer has a designated Triple Residential Pod of lunar surface property on the Schiaparelli Plaza Property.
+```
+
 Notice we've included some example prompts to help you get started. You can use these prompts or create your own.
 
 Go ahead and execute the script `src/querying-documents.py` to see the data extraction process.
