@@ -27,7 +27,6 @@ def main():
     print("\033[H\033[J")
 
     # Setup model
-    # openai.api_key = conf.open_ai_key
     embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-base-en-v1.5")
 
     # Initialize ChromaDB (Vector store)

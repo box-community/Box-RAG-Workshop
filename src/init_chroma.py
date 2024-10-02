@@ -36,7 +36,6 @@ def main():
     )
 
     print(f"Leases found: {len(leases)}, reading documents from Box...")
-    # print(f"Leases ids: {leases_ids}")
 
     documents: List[Document] = []
 
