@@ -8,7 +8,7 @@ We'll use the LlamaIndex Box reader to access the files, and ChromaDB to build t
 
 The LlamaIndex Box reader is a Python class that reads documents from a Box folder. It uses the Box Python SDK to access the files and fetch their content.
 
-In the example we broken these steps further down.
+In the example we broke these steps further down.
 
 We start by searching for the documents in the Box folder:
 
