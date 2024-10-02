@@ -6,7 +6,7 @@ This is a simple example of how to index documents in a Box folder using LlamaIn
 
 This workshop provides a hands-on simple example to indexing and querying documents stored in Box using the LlamaIndex and ChromaDB tools. 
 
-Participants will learn how to use the Box API to search for and retrieve documents from a designated folder, and then use LlamaIndex to process and structure the content for further analysis. 
+Participants will learn how to use the LlamaIndex Box readers to search for and retrieve documents from a designated folder, and then use ChromaDB to process and structure the content for further analysis. 
 
 The workshop highlights the ease of setting up a pipeline that reads files from Box, transforms them into document embeddings using a pre-trained Hugging Face model, and stores these embeddings in a ChromaDB vector store. 
 
