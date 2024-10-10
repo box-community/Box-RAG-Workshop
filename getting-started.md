@@ -7,7 +7,7 @@ To successfully complete this workshop, ensure you have the following:
 
 - A Box account, you can use the [free developer account](https://account.box.com/signup/developer#ty9l3).
 - A Box CCG application created in your Box account (see this [guide](https://medium.com/box-developer-blog/box-python-next-gen-sdk-getting-started-with-ccg-81be0abc82d9)).
-- Python 3.10 or higher installed on your machine.
+- Python 3.12 or higher installed on your machine.
 
 ## Clone the Repository:
 
@@ -20,7 +20,7 @@ cd Box-RAG-Workshop
 
 ### On MacOS and Linux (Python 3.12)
 ```bash
-python3 -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
@@ -53,7 +53,6 @@ BOX_CLIENT_SECRET = YOUR_CLIENT_SECRET
 BOX_ENTERPRISE_ID = YOUR_ENTERPRISE_ID
 BOX_USER_ID = YOUR_USER_ID
 
-FOLDER_SAMPLES = demo/samples
 BOX_ROOT_DEMO_FOLDER = YOUR_ROOT_FOLDER_ID_TO_STORE_SAMPLES
 
 # Open AI Chroma Settings
