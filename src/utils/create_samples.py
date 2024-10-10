@@ -3,6 +3,8 @@ from pathlib import Path
 import pandas as pd
 from docxtpl import DocxTemplate
 from tqdm import tqdm
+
+
 from utils.box_client_ccg import AppConfig
 
 
@@ -24,7 +26,7 @@ def execute_mail_merge():
             "PropertyType": row.get("PropertyType"),
             "Description": row.get("Description"),
             "BedRooms": row.get("BedRooms"),
-            "Rent": f"${row.get("Rent"):,.2f}",
+            "Rent": f"${row.get('Rent'):,.2f}",
         }
         doc.render(context)
 
