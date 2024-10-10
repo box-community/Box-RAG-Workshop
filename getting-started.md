@@ -12,8 +12,8 @@ To successfully complete this workshop, ensure you have the following:
 ## Clone the Repository:
 
 ```bash
-git clone https://github.com/box-community/rag-box-llama-index-leases.git
-cd rag-box-llama-index-leases
+git clone git@github.com:box-community/Box-RAG-Workshop.git
+cd Box-RAG-Workshop
 ```
 
 ## Create a python virtual environment:
