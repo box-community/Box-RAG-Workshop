@@ -13,7 +13,7 @@ To successfully complete this workshop, ensure you have the following:
 
 ```bash
 git clone https://github.com/box-community/rag-box-llama-index-leases.git
-cd box-ai-workshop
+cd rag-box-llama-index-leases
 ```
 
 ## Create a python virtual environment:
