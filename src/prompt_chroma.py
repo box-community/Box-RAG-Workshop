@@ -69,6 +69,9 @@ def main():
         if prompt == "q":
             break
 
+        # cleat screen
+        print("\033[H\033[J")
+
         # Allow selection of example prompt if user chooses 1-5
         if prompt.isdigit() and 1 <= int(prompt) <= 5:
             prompt = example_prompts[int(prompt) - 1]
